@@ -64,8 +64,14 @@ function FrontPages() {
 
   return (
     <>
-      <div className='container' style={{ padding: "20px" }}>
-        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
+      <div className='container title' style={{ padding: "20px" }}>
+        <h1
+          style={{
+            textAlign: "center",
+            fontWeight: "800",
+            marginBottom: "20px",
+          }}
+        >
           Image Search
         </h1>
         {errorMsg && (

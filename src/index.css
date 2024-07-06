@@ -43,7 +43,7 @@ body {
   margin-top: var(--default-margin);
   color: var(--primary-color);
   font-family: "Poppins";
-  font-weight: 1000;
+  font-weight: 600;
 }
 
 .buttons {
@@ -55,22 +55,13 @@ body {
   margin-bottom: var(--larger-margin);
 }
 
-.buttons .btn,
-.buttons .btn:active,
-.buttons .btn:focus {
-  background-color: var(--primary-color);
-  box-shadow: none;
-  outline: none;
-  border: none;
-}
-
 .error-msg {
-  color: #ff0000;
+  color: #fb4934;
   text-align: center;
 }
 
 .loading {
-  color: #6565d4;
+  color: #d3869b;
   text-align: center;
   margin-top: 20px;
   font-size: 20px;
