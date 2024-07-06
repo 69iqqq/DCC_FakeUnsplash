@@ -1,129 +1,3 @@
-// import axios from "axios";
-// import { useCallback, useEffect, useRef, useState } from "react";
-// import { Button, Form } from "react-bootstrap";
-// const API_URL = "https://api.unsplash.com/search/photos";
-// const IMAGES_PER_PAGE = 20;
-
-// function FrontPages() {
-//   const searchInput = useRef(null);
-//   const [images, setImages] = useState([]);
-//   const [page, setPage] = useState(1);
-//   const [totalPages, setTotalPages] = useState(0);
-//   const [errorMsg, setErrorMsg] = useState("");
-//   const [loading, setLoading] = useState(false);
-
-//   const fetchImages = useCallback(async () => {
-//     try {
-//       if (searchInput.current.value) {
-//         setErrorMsg("");
-//         setLoading(true);
-//         const { data } = await axios.get(
-//           `${API_URL}?query=${
-//             searchInput.current.value
-//           }&page=${page}&per_page=${IMAGES_PER_PAGE}&client_id=${
-//             import.meta.env.VITE_API_KEY
-//           }`
-//         );
-//         setImages(data.results);
-//         setTotalPages(data.total_pages);
-//         setLoading(false);
-//       }
-//     } catch (error) {
-//       setErrorMsg("Error fetching images. Try again later.");
-//       console.log(error);
-//       setLoading(false);
-//     }
-//   }, [page]);
-
-//   useEffect(() => {
-//     fetchImages();
-//   }, [fetchImages]);
-
-//   const resetSearch = () => {
-//     setPage(1);
-//     fetchImages();
-//   };
-
-//   const handleSearch = (event) => {
-//     event.preventDefault();
-//     resetSearch();
-//   };
-
-//   return (
-//     <>
-//       <div className='container' style={{}}>
-//         <h1 className='title'>Image Search</h1>
-//         {errorMsg && <p className='error-msg'>{errorMsg}</p>}
-//         <div className='search-section'>
-//           <Form onSubmit={handleSearch}>
-//             <Form.Control
-//               type='search'
-//               placeholder='Type something to search...'
-//               className='search-input'
-//               ref={searchInput}
-//             />
-//           </Form>
-//         </div>
-//         {loading ? (
-//           <p className='loading'>Loading...</p>
-//         ) : (
-//           <>
-//             <div className='images'>
-//               {images.map((image) => (
-//                 <div key={image.id} className='image-container'>
-//                   <img
-//                     src={image.urls.small}
-//                     alt={image.alt_description}
-//                     className='image'
-//                   />
-//                   <div
-//                     className='image'
-//                     style={{
-//                       display: "flex",
-//                       alignItems: "center",
-//                       justifyContent: "space-between",
-//                       marginTop: "-60px",
-//                       marginButton: "-60px",
-//                     }}
-//                   >
-//                     <Button
-//                       style={{
-//                         backgroundColor: "#3c3836",
-//                         borderColor: "#3c3836",
-//                       }}
-//                       onClick={() => window.open(image.urls.full, "_blank")}
-//                     >
-//                       View
-//                     </Button>
-//                     <Button
-//                       style={{
-//                         backgroundColor: "#3c3836",
-//                         borderColor: "#3c3836",
-//                       }}
-//                       onClick={() => window.open(image.urls.full, "_blank")}
-//                     >
-//                       Download
-//                     </Button>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//             <div className='buttons'>
-//               {page > 1 && (
-//                 <Button onClick={() => setPage(page - 1)}>Previous</Button>
-//               )}
-//               {page < totalPages && (
-//                 <Button onClick={() => setPage(page + 1)}>Next</Button>
-//               )}
-//             </div>
-//           </>
-//         )}
-//       </div>
-//     </>
-//   );
-// }
-
-// export default FrontPages;
 import axios from "axios";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
@@ -190,7 +64,7 @@ function FrontPages() {
 
   return (
     <>
-      <div style={{ padding: "20px" }}>
+      <div className='container' style={{ padding: "20px" }}>
         <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
           Image Search
         </h1>
@@ -198,7 +72,10 @@ function FrontPages() {
           <p style={{ color: "red", textAlign: "center" }}>{errorMsg}</p>
         )}
         <div style={{ marginBottom: "20px" }}>
-          <Form onSubmit={handleSearch}>
+          <Form
+            style={{ width: "500px", margin: "auto" }}
+            onSubmit={handleSearch}
+          >
             <Form.Control
               type='search'
               placeholder='Type something to search...'
