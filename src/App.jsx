@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import "./index.css";
 function App() {
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", backgroundColor: "#a89984" }}>
       <Header />
       <FrontPages />
       <Footer />
