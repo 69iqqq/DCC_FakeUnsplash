@@ -112,8 +112,8 @@ function FrontPages() {
                   >
                     <Button
                       style={{
-                        backgroundColor: "#3c3836",
-                        borderColor: "#3c3836",
+                        backgroundColor: "#83a598",
+                        borderColor: "#83a598",
                       }}
                       onClick={() => handleView(image)}
                     >
@@ -121,8 +121,8 @@ function FrontPages() {
                     </Button>
                     <Button
                       style={{
-                        backgroundColor: "#3c3836",
-                        borderColor: "#3c3836",
+                        backgroundColor: "#d3869b",
+                        borderColor: "#d3869b",
                       }}
                       onClick={() => window.open(image.urls.full, "_blank")}
                     >
@@ -198,8 +198,8 @@ function FrontPages() {
             <Modal.Footer>
               <Button
                 style={{
-                  backgroundColor: "#3c3836",
-                  borderColor: "#3c3836",
+                  backgroundColor: "#d3869b",
+                  borderColor: "#d3869b",
                 }}
                 onClick={handleCloseModal}
               >
