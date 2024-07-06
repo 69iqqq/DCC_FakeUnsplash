@@ -4,11 +4,11 @@ import Footer from "./components/Footer";
 import "./index.css";
 function App() {
   return (
-    <>
+    <div style={{ overflow: "hidden" }}>
       <Header />
       <FrontPages />
       <Footer />
-    </>
+    </div>
   );
 }
 

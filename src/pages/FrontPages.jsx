@@ -79,7 +79,7 @@ function FrontPages() {
         )}
         <div style={{ marginBottom: "20px" }}>
           <Form
-            style={{ width: "500px", margin: "auto" }}
+            style={{ width: "300px", margin: "auto" }}
             onSubmit={handleSearch}
           >
             <Form.Control
